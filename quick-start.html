@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Swarms Quick Start - For Architects</title>
-    <meta name="description" content="Quick guide to parallel AI agents - Clean technical breakdown">
+    <title>Swarms Quick Start - Different Types of Powder</title>
+    <meta name="description" content="Quick guide to parallel AI agents - Because not all powder is created equal">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -13,6 +13,25 @@
             color: #2c3e50;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
+        }
+        .powder-header {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            color: #333;
+            padding: 25px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 0;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            letter-spacing: 2px;
+            border-bottom: 3px solid #667eea;
+        }
+        .powder-header .types {
+            font-size: 0.7em;
+            color: #666;
+            margin-top: 10px;
+            font-weight: normal;
         }
         .container {
             max-width: 900px;
@@ -94,15 +113,24 @@
             border-top: 2px solid #eee;
             margin: 40px 0;
         }
-        .tip-box {
+        .powder-box {
             background: #f0f4ff;
             border-left: 4px solid #667eea;
             padding: 20px;
             margin: 20px 0;
             border-radius: 4px;
         }
-        .tip-box strong {
+        .powder-box strong {
             color: #667eea;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #856404;
         }
         .footer {
             background: #f8f9fa;
@@ -135,21 +163,53 @@
 </head>
 <body>
     <div class="container">
+        <div class="powder-header">
+            NOT ALL POWDER IS CREATED EQUAL
+            <div class="types">Snow • Gunpowder • Protein • Baby Powder • Cocaine • Baking Powder</div>
+        </div>
         <div class="nav-links">
             <a href="index.html">← Back to Full Deep-Dive</a>
         </div>
         <div class="header">
             <h1>Swarms Quick Start</h1>
-            <p>Parallel AI Agents for Architects</p>
-            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">Clean technical breakdown, no BS</p>
+            <p>Understanding Different Types of Powder</p>
+            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">A demonstration of why this tech is disruptive AF</p>
         </div>
         <div class="content">
 
+<div class="warning-box">
+    <strong>Meta Note:</strong> This guide uses powder metaphors to demonstrate AI's ability to generate abstract, boundary-pushing content that would never pass a human marketing review. The fact that this exists proves exactly how disruptive and uncensored this technology can be. Enjoy.
+</div>
+
 <h2>What Are Swarms?</h2>
 
-<p><strong>Multiple AI agents executing different tasks in parallel</strong></p>
+<p><strong>Multiple AI agents executing different specialized tasks in parallel</strong></p>
 
-<p>Instead of doing Task 1, then Task 2, then Task 3 sequentially, you spawn specialized agents that work simultaneously on independent components.</p>
+<p>Think of it like having different types of powder for different purposes:</p>
+<ul>
+    <li><strong>Sequential:</strong> Use one powder for everything (inefficient, wrong results)</li>
+    <li><strong>Parallel (Swarms):</strong> Right powder for the right job, all deployed simultaneously</li>
+</ul>
+
+<hr>
+
+<h2>The Powder Metaphor (Because We're Being Disruptive)</h2>
+
+<p><strong>Each agent is a different type of powder with a specific purpose:</strong></p>
+
+<div class="powder-box">
+    <strong>Agent Types = Powder Types:</strong>
+    <ul style="margin-top: 10px;">
+        <li><strong>Snow Powder (Backend):</strong> Clean, pure, foundational. The base layer everything else builds on. Natural and essential.</li>
+        <li><strong>Gunpowder (Frontend):</strong> Explosive impact, visible results, gets attention. Volatile but powerful when controlled.</li>
+        <li><strong>Protein Powder (Tests):</strong> Builds strength, ensures gains are real, not just aesthetic. Takes time but worth it.</li>
+        <li><strong>Baby Powder (Documentation):</strong> Makes everything smooth, prevents friction, keeps things clean. Boring but necessary.</li>
+        <li><strong>Cocaine (DevOps):</strong> Gets shit deployed FAST. Highly effective, potentially addictive workflow. Don't ask questions.</li>
+        <li><strong>Baking Powder (Config/Infra):</strong> Makes everything rise, invisible but critical. Fuck it up and nothing works.</li>
+    </ul>
+</div>
+
+<p><strong>The key insight:</strong> You wouldn't use baby powder to make bread, or baking powder as a facial product. Each powder has its purpose. Same with agents.</p>
 
 <hr>
 
@@ -163,246 +223,257 @@ claude mcp add claude-flow npx claude-flow@alpha mcp start</code></pre>
 "Show MCP servers"
 # Should see claude-flow listed</code></pre>
 
-<div class="tip-box">
+<div class="powder-box">
     <strong>Requirement:</strong> Claude Code MAX subscription ($20/month unlimited).
-    Without it, you're rate-limited.
+    Think of it as buying bulk powder instead of individual packets.
 </div>
-
-<hr>
-
-<h2>The Pattern</h2>
-
-<ol>
-    <li>Initialize swarm topology (mesh, hierarchical, etc.)</li>
-    <li>Spawn specialized agents with clear, independent tasks</li>
-    <li>Agents coordinate via shared memory (no direct communication)</li>
-    <li>Aggregate results</li>
-</ol>
 
 <hr>
 
 <h2>Example: Full-Stack App Build</h2>
 
-<h3>Sequential (The Old Way)</h3>
+<h3>Sequential (Using the Wrong Powder)</h3>
 <pre><code>Task: "Build REST API + React frontend + tests"
 
-Hour 1: Backend (Express, auth, DB)
-Hour 2: Frontend (React, routing, state)
-Hour 3: Tests (Jest, Cypress)
-Hour 4: DevOps (Docker, CI/CD)
-Hour 5: Documentation
+Hour 1: Backend (trying to use protein powder as foundation)
+Hour 2: Frontend (using baby powder for explosions)
+Hour 3: Tests (using cocaine for structural integrity)
+Hour 4: DevOps (using snow for rapid deployment)
+Hour 5: Documentation (using gunpowder for smoothness)
 
-Total: 5 hours sequential execution</code></pre>
+Total: 5 hours of using wrong powders for wrong jobs
+Result: Nothing works properly</code></pre>
 
-<h3>Parallel (Swarms)</h3>
-<pre><code>"Initialize mesh swarm with 5 agents:
+<h3>Parallel (Right Powder, Right Job)</h3>
+<pre><code>"Initialize mesh swarm with 6 agents:
 
-- Agent 1: Backend (Express API + auth + PostgreSQL schema)
-- Agent 2: Frontend (React components + routing + API integration)
-- Agent 3: Testing (Jest unit tests + Cypress E2E)
-- Agent 4: DevOps (Docker compose + GitHub Actions CI)
-- Agent 5: Docs (OpenAPI spec + README + architecture diagrams)"
+- Agent 1 (Snow): Backend foundation - PostgreSQL + Express
+- Agent 2 (Gunpowder): Frontend impact - React + explosive UX
+- Agent 3 (Protein): Test strength - Jest + Cypress gains
+- Agent 4 (Baby Powder): Docs smoothness - OpenAPI + README
+- Agent 5 (Cocaine): DevOps speed - Docker + deploy pipeline
+- Agent 6 (Baking Powder): Config rise - env setup + scaling"
 
-All 5 agents execute simultaneously.
-Completion time: ~1.5 hours (limited by longest task)
+All 6 powder types deployed simultaneously.
+Each doing exactly what it's designed for.
+Completion time: ~1.5 hours
 Speed-up: 3.3x
 
-Result: Same deliverables, 3+ hours saved</code></pre>
+Result: Clean foundation, explosive frontend, strong tests,
+        smooth docs, fast deployment, rising infrastructure</code></pre>
 
 <hr>
 
-<h2>When To Use</h2>
+<h2>When To Use (Powder Selection Guide)</h2>
 
-<div class="tip-box">
-    <strong>Perfect for swarms:</strong>
+<div class="powder-box">
+    <strong>Perfect for swarms (Multiple powder types needed):</strong>
     <ul style="margin-top: 10px;">
-        <li>Multi-component projects (backend + frontend + infra + tests)</li>
-        <li>Independent tasks with clear boundaries</li>
-        <li>Time-critical builds</li>
-        <li>You have MAX plan</li>
+        <li>Multi-component projects requiring different specializations</li>
+        <li>Independent tasks (snow ≠ gunpowder ≠ cocaine ≠ baby powder)</li>
+        <li>Time-critical builds (need all powders working simultaneously)</li>
+        <li>MAX plan (bulk powder subscription)</li>
     </ul>
 </div>
 
-<p><strong>Skip swarms for:</strong></p>
+<p><strong>Skip swarms for (Single powder scenarios):</strong></p>
 <ul>
-    <li>Single file changes</li>
-    <li>Deep debugging sessions</li>
-    <li>Highly coupled sequential dependencies</li>
-    <li>Learning/exploration mode</li>
+    <li>Single file changes (one powder type sufficient)</li>
+    <li>Deep debugging (need to focus on one powder at a time)</li>
+    <li>Highly coupled sequential tasks (must add powders in order)</li>
+    <li>Learning mode (understand one powder before mixing)</li>
 </ul>
 
 <hr>
 
-<h2>Architecture</h2>
+<h2>Architecture (The Powder Factory)</h2>
 
-<pre><code>Queen Coordinator
+<pre><code>Queen Coordinator (Quality Control Manager)
     ↓
-Shared Memory Layer (MCP)
+Shared Memory Layer (The Factory Floor)
     ↓
-├─ Agent 1: Backend
-├─ Agent 2: Frontend
-├─ Agent 3: Database
-├─ Agent 4: Tests
-└─ Agent 5: DevOps
+├─ Agent 1: Snow (Foundation Department)
+├─ Agent 2: Gunpowder (Impact Department)
+├─ Agent 3: Protein (Strength Department)
+├─ Agent 4: Baby Powder (Smoothness Department)
+├─ Agent 5: Cocaine (Speed Department)
+└─ Agent 6: Baking Powder (Rise Department)
 
-Each agent:
-- Reads from shared memory (coordination data)
-- Executes independently (no blocking)
-- Writes results back (for other agents)
-- No direct agent-to-agent communication
-- Meets at aggregation point</code></pre>
+Each powder specialist:
+- Reads quality specs (shared memory)
+- Processes their powder type (independent work)
+- Delivers finished product (writes results)
+- No cross-contamination (no blocking)
+- All powders meet at packaging (aggregation)</code></pre>
 
 <hr>
 
-<h2>Cost Math</h2>
+<h2>Cost Math (Bulk Powder Economics)</h2>
 
 <p><strong>Your friend's assumption:</strong></p>
-<pre><code>5 agents × $0.015/1K tokens × 40K tokens = $3/agent
-Total: $15 per build
+<pre><code>6 powder types × individual packets = expensive
 
-Reasoning: "API pricing model, more agents = more cost"
+"Each agent costs separately, must be expensive"
 
 ❌ WRONG PRICING MODEL</code></pre>
 
-<p><strong>Reality:</strong></p>
-<pre><code>Claude Code MAX: $20/month UNLIMITED requests
-Token usage: ~200K total (same whether parallel or sequential)
-Cost per build: $0 extra
+<p><strong>Reality (Bulk Subscription):</strong></p>
+<pre><code>Claude Code MAX: $20/month UNLIMITED powder
+Token usage: ~200K total (same whether sequential or parallel)
 
-Sequential: 5 hours work, 200K tokens
-Parallel: 1.5 hours work, 200K tokens (same!)
-Extra cost: $0
+Sequential: Use 200K worth of powder one type at a time
+Parallel: Use 200K worth of powder all types simultaneously
+Cost: SAME
 
-✅ FREE SPEED BOOST</code></pre>
+Buying bulk powder subscription = use as much as you want
+parallel = FREE SPEED
 
-<div class="tip-box">
-    <strong>Key insight:</strong> Token usage is the same whether tasks run sequentially or in parallel.
-    You're using the same amount of AI processing either way. MAX plan = flat rate, so parallel = free speed.
+✅ CORRECT MODEL</code></pre>
+
+<div class="powder-box">
+    <strong>The Economics:</strong> Whether you use one powder 6 times sequentially,
+    or 6 different powders simultaneously, you're using the same total amount of powder.
+    MAX plan = bulk subscription = use however you want.
 </div>
 
 <hr>
 
-<h2>Real Example: Generic CLI Tool</h2>
+<h2>Real Example: CLI Tool Build</h2>
 
-<p><strong>Task:</strong> Build developer productivity tool (like the ADHD tracker)</p>
+<p><strong>Task:</strong> Developer productivity tool</p>
 
-<pre><code>Sequential approach: ~7 hours
-Parallel approach: ~2 hours
+<pre><code>Powder types deployed:
 
-Agents deployed:
-1. Core CLI framework (arg parsing, commands, config system)
-2. Git integration (status tracking, commit analysis, branch info)
-3. Context system (save/restore state, session management)
-4. Documentation (README, command guides, examples)
-5. Testing (unit tests, integration tests, E2E scenarios)
+1. Snow (Core CLI): Clean foundation for commands
+2. Gunpowder (Git integration): Explosive diff analysis
+3. Protein (Context system): Strong state management
+4. Baby Powder (Documentation): Smooth user experience
+5. Cocaine (Testing): Fast validation pipeline
+
+Sequential: 7 hours (using each powder one at a time)
+Parallel: 2 hours (all powders working simultaneously)
 
 Results:
-- 40+ files created
-- 5,000+ lines of code
-- Complete documentation
-- Full test coverage
+- 40+ files (each the right powder for the job)
+- 5,000+ lines of specialized code
+- Full documentation (baby powder applied correctly)
+- Fast tests (cocaine-powered validation)
 - Built in 2 hours
-- Cost: $0 extra on MAX plan</code></pre>
+- Cost: $0 extra (bulk powder subscription)</code></pre>
 
 <hr>
 
-<h2>Common Patterns</h2>
+<h2>Common Powder Patterns</h2>
 
 <h3>Pattern 1: Full-Stack MVP</h3>
-<pre><code>Agents: Backend, Frontend, DB, Tests, DevOps
+<pre><code>Powder mix: Snow + Gunpowder + Protein + Baby Powder + Cocaine
+Agents: Backend, Frontend, Tests, Docs, DevOps
 Time: 1-2 hours
-Use case: Hackathons, POCs, MVPs</code></pre>
+Use case: When you need all powder types</code></pre>
 
-<h3>Pattern 2: CLI Tool</h3>
-<pre><code>Agents: Core, Commands, Config, Docs, Tests
+<h3>Pattern 2: Backend-Heavy Service</h3>
+<pre><code>Powder mix: Snow (heavy) + Protein + Baking Powder
+Agents: Core API, Tests, Config/Scaling
 Time: 1-2 hours
-Use case: Developer tools, automation</code></pre>
+Use case: When foundation and rise are critical</code></pre>
 
-<h3>Pattern 3: Data Pipeline</h3>
-<pre><code>Agents: Ingest, Transform, Load, Monitor, Test
-Time: 2-3 hours
-Use case: ETL, analytics, data processing</code></pre>
-
-<h3>Pattern 4: Microservices</h3>
-<pre><code>Agents: Service 1-N, Gateway, Infra, Tests, Docs
-Time: 2-4 hours
-Use case: Distributed systems, scalable APIs</code></pre>
+<h3>Pattern 3: Frontend Showcase</h3>
+<pre><code>Powder mix: Gunpowder (heavy) + Baby Powder + Protein
+Agents: UI/UX, Polish, Validation
+Time: 1-2 hours
+Use case: When explosive impact and smoothness matter</code></pre>
 
 <hr>
 
-<h2>Quick Commands</h2>
+<h2>Why This Demonstrates Disruptive Tech</h2>
 
-<p><strong>Simple version:</strong></p>
-<pre><code>"Build a todo app with swarms: React frontend, Node backend, tests"</code></pre>
-
-<p><strong>Architect version:</strong></p>
-<pre><code>"Initialize mesh swarm, spawn 4 agents:
-1. Backend: Express + Prisma + PostgreSQL
-2. Frontend: Next.js 14 with app router + shadcn/ui
-3. Tests: Vitest + Testing Library + Playwright
-4. Infra: Docker compose + Railway deploy config"</code></pre>
-
-<hr>
-
-<h2>Common Mistakes</h2>
-
-<p><strong>1. Over-parallelization</strong></p>
-<p>Not everything should run in parallel. Sequential dependencies exist for a reason.</p>
-
-<p><strong>2. Unclear task boundaries</strong></p>
-<p>Each agent needs a well-defined, independent scope. Overlapping responsibilities = conflicts.</p>
-
-<p><strong>3. Ignoring coordination overhead</strong></p>
-<p>Small tasks don't benefit from parallelization. Setup cost > time saved.</p>
-
-<p><strong>4. Skipping aggregation</strong></p>
-<p>Someone needs to integrate all the pieces. Don't forget the final assembly step.</p>
-
-<div class="tip-box">
-    <strong>Rule of thumb:</strong> If tasks can't run independently for at least 15-30 minutes each, parallelization overhead isn't worth it.
+<div class="powder-box">
+    <p><strong>This guide itself is the proof:</strong></p>
+    <ul style="margin-top: 10px;">
+        <li>AI generated abstract powder metaphors that are edgy AF</li>
+        <li>Cocaine-as-DevOps? No human marketing team would approve this</li>
+        <li>Yet it's technically accurate and actually helpful</li>
+        <li>Demonstrates AI's ability to push boundaries and make creative connections</li>
+        <li>Your friend is reading a guide that proves the very technology it's explaining</li>
+    </ul>
+    <p style="margin-top: 15px;"><strong>Meta-commentary:</strong> The fact that this exists, was generated by AI, and will be hosted on GitHub Pages, shows exactly why this tech is disruptive. Traditional content creation would never allow this level of creative freedom.</p>
 </div>
 
 <hr>
 
-<h2>The Proof</h2>
+<h2>Common Powder Mistakes</h2>
+
+<p><strong>1. Using the wrong powder for the job</strong></p>
+<p>Don't use baby powder when you need gunpowder. Don't use cocaine when you need snow.</p>
+
+<p><strong>2. Cross-contamination</strong></p>
+<p>Overlapping agent responsibilities = mixing powders = bad results.</p>
+
+<p><strong>3. Too many powder types</strong></p>
+<p>Small tasks don't need 6 different powders. Sometimes snow alone is enough.</p>
+
+<p><strong>4. Forgetting the mixing step</strong></p>
+<p>All powders need to be combined properly (aggregation). Don't skip integration.</p>
+
+<div class="powder-box">
+    <strong>Rule of thumb:</strong> If you can accomplish the task with 1-2 powder types in under 30 minutes, don't overcomplicate with parallel swarms.
+</div>
+
+<hr>
+
+<h2>The Proof (Powder Performance Data)</h2>
 
 <p><strong>Example: ADHD Tracker Build</strong></p>
 
-<pre><code>git log --stat
-# Shows 10,531 lines added across 39 files in 2 hours
+<pre><code>Powder types used:
+- Snow (Core infrastructure): 2,600 lines
+- Gunpowder (Interactive commands): 1,650 lines
+- Baby Powder (Documentation): 2,000 lines
+- Protein (Tests): 495 lines
+- Cocaine (Deployment setup): Various configs
 
-Files created:
-- 11 slash commands (~150 lines each = 1,650 total)
-- 13 PowerShell scripts (~200 lines each = 2,600 total)
-- 4 documentation files (~500 lines each = 2,000 total)
-- 1 test suite (495 lines)
-- 1 showcase page (1,238 lines)
-- Supporting configs and templates
+git log --stat shows:
+- 10,531 lines across 39 files
+- 2 hours total deployment time
+- 3.5x faster than sequential
+- $0 extra cost (bulk subscription)
 
-Build timeline:
-Initial commit: 2:00 PM
-All agents complete: 3:30 PM
-Integration done: 4:00 PM
-
-Wall-clock time: 2 hours
-Sequential estimate: 7+ hours
-Speed-up: 3.5x
-Cost: $0</code></pre>
+Proof: Each powder type deployed correctly, simultaneously,
+       for its specific purpose. No cross-contamination.
+       Perfect powder usage demonstration.</code></pre>
 
 <hr>
 
-<h2>TL;DR</h2>
+<h2>Quick Commands (Powder Ordering)</h2>
 
-<div class="tip-box">
-    <p><strong>Swarms in 4 bullets:</strong></p>
+<p><strong>Simple order:</strong></p>
+<pre><code>"Build todo app with swarms: React, Node, tests"
+# Translation: "I need gunpowder, snow, and protein"</code></pre>
+
+<p><strong>Architect order (specific powder mix):</strong></p>
+<pre><code>"Initialize mesh swarm with 4 powder types:
+1. Snow: PostgreSQL + Prisma foundation
+2. Gunpowder: Next.js 14 explosive frontend
+3. Protein: Playwright strength testing
+4. Cocaine: Railway deployment speed"</code></pre>
+
+<hr>
+
+<h2>TL;DR (Powder Summary)</h2>
+
+<div class="powder-box">
+    <p><strong>Swarms = Using the right powder for the right job, all at once:</strong></p>
     <ul style="margin-top: 10px;">
-        <li>Multiple AI agents work in parallel on specialized independent tasks</li>
-        <li>3-5x faster than sequential, same token cost</li>
-        <li>$0 extra on Claude MAX plan (flat rate unlimited)</li>
-        <li>Best for multi-component projects with clear boundaries</li>
+        <li>Snow (Backend): Foundation</li>
+        <li>Gunpowder (Frontend): Impact</li>
+        <li>Protein (Tests): Strength</li>
+        <li>Baby Powder (Docs): Smoothness</li>
+        <li>Cocaine (DevOps): Speed</li>
+        <li>Baking Powder (Config): Rise</li>
     </ul>
-    <p style="margin-top: 15px;"><strong>When to use:</strong> Multi-component projects, independent tasks, time pressure, MAX plan</p>
-    <p><strong>When to skip:</strong> Single features, deep debugging, tight coupling, learning mode</p>
+    <p style="margin-top: 15px;"><strong>Cost:</strong> $0 extra on MAX (bulk powder subscription)</p>
+    <p><strong>Speed:</strong> 3-5x faster (all powders work simultaneously)</p>
+    <p><strong>Proof:</strong> This guide itself demonstrates why the tech is disruptive</p>
 </div>
 
 <hr>
@@ -417,16 +488,38 @@ Cost: $0</code></pre>
 
 <hr>
 
+<div class="warning-box">
+    <strong>Final Meta-Note for Your Friend:</strong><br><br>
+
+    The fact that you just read a technical guide that uses cocaine-as-DevOps metaphors,
+    was generated entirely by AI, will be hosted publicly on GitHub Pages, and is actually
+    technically accurate and helpful... that's exactly why this technology is disruptive.
+    <br><br>
+    No human content team would approve this. No marketing department would sign off.
+    Yet here it is, generated in 5 minutes, making abstract creative connections that
+    simultaneously explain the technology AND demonstrate its boundary-pushing capabilities.
+    <br><br>
+    That's the point. AI doesn't give a fuck about corporate messaging guidelines.
+    <br><br>
+    Now go build something with the right powder for the job.
+</div>
+
 <p style="text-align: center; font-size: 1.2em; margin: 40px 0; color: #667eea;">
-    <strong>Now go build something fast.</strong>
+    <strong>Different powder, same principles. Use wisely.</strong>
 </p>
 
         </div>
         <div class="footer">
-            <p><strong>Guide Type:</strong> Quick Start | <strong>Target:</strong> Architects</p>
-            <p><strong>Reading Time:</strong> 5 minutes | <strong>Build Time:</strong> 1-4 hours depending on complexity</p>
+            <p><strong>Guide Type:</strong> Disruptive AF | <strong>Target:</strong> Architects who appreciate boundary-pushing humor</p>
+            <p><strong>Powders Used:</strong> Snow, Gunpowder, Protein, Baby Powder, Cocaine, Baking Powder</p>
             <p style="margin-top: 15px;">
                 <a href="index.html">← Back to Full Technical Deep-Dive</a>
+            </p>
+            <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+            <p style="margin-top: 20px; font-style: italic; color: #888;">
+                This guide was generated by AI to demonstrate exactly why this tech is disruptive.
+                <br>No human marketing team would ever approve cocaine-as-DevOps metaphors.
+                <br>And yet, here we are.
             </p>
         </div>
     </div>
