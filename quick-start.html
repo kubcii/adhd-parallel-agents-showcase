@@ -170,13 +170,13 @@
 
 <p><strong>Swarms = Multiple AI agents working in parallel</strong></p>
 
-<p>Think of it like dropping into a bowl with your crew:</p>
+<p>Think of it like a powder day with your crew:</p>
 <ul>
-    <li><strong>Sequential:</strong> Everyone waits, then follows the same line one at a time</li>
-    <li><strong>Parallel (Swarms):</strong> Everyone drops in together, each carves their own line down the same face, you all meet at the bottom</li>
+    <li><strong>Sequential:</strong> One person hits the trees, comes back. Then someone drops the cliff, comes back. Then someone carves the pillows. Takes all day.</li>
+    <li><strong>Parallel (Swarms):</strong> Trees guy drops in. Cliff guy sends it. Pillows guy is carving. Couloir guy is ripping. All at the same time, different types of lines.</li>
 </ul>
 
-<p>Same run. Same destination. Each person taking their own line. Way faster. Way more fun.</p>
+<p>Same mountain. Same powder day. Each specialist doing their thing simultaneously. Meet at the lift, stack results. Way faster.</p>
 
 <hr>
 
@@ -230,15 +230,15 @@ Total: 5 hours of following the same boring line</code></pre>
 - DevOps: Docker compose + GitHub Actions CI
 - Docs: API docs + README + architecture diagram"
 
-Swarm spawns:
-→ Backend agent: API, auth, DB schema
-→ Frontend agent: Components, routing, API integration
-→ Test agent: Unit + integration + E2E
-→ DevOps agent: Containers, CI/CD pipeline
-→ Docs agent: OpenAPI spec, README, diagrams
+Swarm spawns (each specialist on their line):
+→ Backend agent: Trees (API, auth, DB schema)
+→ Frontend agent: Cliffs (Components, routing, API calls)
+→ Test agent: Pillows (Unit + integration + E2E)
+→ DevOps agent: Couloirs (Containers, CI/CD)
+→ Docs agent: Open bowl (OpenAPI, README, diagrams)
 
-All carving their own lines simultaneously.
-Meet at the bottom in ~1.5 hours.
+Each specialist doing their type of line simultaneously.
+Meet at the lift in ~1.5 hours.
 
 Result: Same deliverables, 3.3x faster, way more stoke.</code></pre>
 
@@ -247,44 +247,44 @@ Result: Same deliverables, 3.3x faster, way more stoke.</code></pre>
 <h2>When To Use (Conditions Report)</h2>
 
 <div class="tip-box">
-    <strong>Wide Open Bowl (Perfect for swarms):</strong>
+    <strong>Powder Day - Different Lines Available (Perfect for swarms):</strong>
     <ul style="margin-top: 10px;">
-        <li>Multi-component projects (backend + frontend + infra)</li>
-        <li>Independent tasks that can run parallel</li>
-        <li>Time-critical builds ("need this by EOD")</li>
-        <li>You have MAX plan (unlimited runs)</li>
+        <li>Multi-component projects (backend + frontend + infra + tests)</li>
+        <li>Independent specialized tasks (trees guy ≠ cliff guy ≠ pillows guy)</li>
+        <li>Time-critical builds ("fresh tracks before it gets tracked out")</li>
+        <li>You have MAX plan (unlimited laps)</li>
     </ul>
-    <em>Plenty of room for everyone to carve their own line simultaneously</em>
+    <em>Different types of lines = different agents, all ripping simultaneously</em>
 </div>
 
-<p><strong>Narrow Chute (Use sequential):</strong></p>
+<p><strong>Single Line Feature (Use sequential):</strong></p>
 <ul>
     <li>Single file changes</li>
     <li>Deep debugging (need focus)</li>
     <li>Highly dependent sequential tasks</li>
-    <li>Learning/experimenting (take it slow)</li>
+    <li>Learning/experimenting (session the same feature)</li>
 </ul>
-<p><em>Only room for one skier at a time - wait your turn</em></p>
+<p><em>One specific line to dial in - lap it until it's dialed</em></p>
 
 <hr>
 
 <h2>The Architecture (How The Mountain Works)</h2>
 
-<pre><code>Queen Coordinator (Ski Patrol)
+<pre><code>Queen Coordinator (Mountain Guide - knows the terrain)
     ↓
-Shared Memory Layer (The Mountain)
+Shared Memory Layer (The Mountain - conditions report)
     ↓
-├─ Agent 1: Backend (Left couloir)
-├─ Agent 2: Frontend (Center bowl)
-├─ Agent 3: Database (Right chute)
-├─ Agent 4: Tests (Trees run)
-└─ Agent 5: DevOps (Cliff drops)
+├─ Agent 1: Backend (Trees specialist)
+├─ Agent 2: Frontend (Cliff drops specialist)
+├─ Agent 3: Database (Couloir specialist)
+├─ Agent 4: Tests (Pillows/moguls specialist)
+└─ Agent 5: DevOps (Powder bowls specialist)
 
-Each agent:
-- Reads from shared memory (checks conditions)
-- Executes independently (carves own line)
-- Writes back results (leaves tracks)
-- No blocking (doesn't wait for others)
+Each agent/specialist:
+- Reads conditions (shared memory)
+- Executes their type of line (independent work)
+- Leaves tracks (writes results back)
+- No blocking (doesn't wait for others to finish their lines)
 - Meets at lift (aggregation point)</code></pre>
 
 <hr>
@@ -313,7 +313,7 @@ Extra cost: $0
 <div class="tip-box">
     <strong>The Math:</strong> Parallel uses same tokens as sequential (maybe less due to no context switching overhead).
     MAX plan = flat rate unlimited. You're paying for the lift ticket either way -
-    might as well drop in with your whole crew instead of going one at a time.
+    might as well have everyone hitting different lines simultaneously instead of sessioning one feature all day.
 </div>
 
 <hr>
@@ -372,22 +372,26 @@ Result:
 <h2>Common Patterns (Your Favorite Lines)</h2>
 
 <h3>Pattern 1: Full-Stack App</h3>
-<pre><code>Agents: Backend, Frontend, DB, Tests, DevOps
+<pre><code>Line types: Trees, Cliffs, Couloirs, Pillows, Bowls
+Agents: Backend, Frontend, DB, Tests, DevOps
 Time: 1-2 hours
 Use case: MVP, hackathon, proof-of-concept</code></pre>
 
 <h3>Pattern 2: CLI Tool</h3>
-<pre><code>Agents: Core logic, Commands, Config, Docs, Tests
+<pre><code>Line types: Trees, Steeps, Rollers, Bowls, Pillows
+Agents: Core logic, Commands, Config, Docs, Tests
 Time: 1-2 hours
 Use case: Developer tools, automation scripts</code></pre>
 
 <h3>Pattern 3: Data Pipeline</h3>
-<pre><code>Agents: Ingestion, Transform, Load, Monitoring, Tests
+<pre><code>Line types: Chutes, Gullies, Bowls, Faces, Trees
+Agents: Ingestion, Transform, Load, Monitoring, Tests
 Time: 2-3 hours
 Use case: ETL, data processing, analytics</code></pre>
 
 <h3>Pattern 4: Microservices</h3>
-<pre><code>Agents: Service 1-N, Gateway, Infra, Tests, Docs
+<pre><code>Line types: Multiple zones across the mountain
+Agents: Service 1-N, Gateway, Infra, Tests, Docs
 Time: 2-4 hours
 Use case: Distributed systems, scalable APIs</code></pre>
 
@@ -409,7 +413,7 @@ Use case: Distributed systems, scalable APIs</code></pre>
 
 <div class="tip-box">
     <strong>Ski Patrol Advisory:</strong> Most wipeouts happen because people try to parallel everything.
-    Some chutes are narrow - only room for one line at a time. Know the difference between a bowl and a couloir.
+    Know the difference between "5 different line types available" vs "sessioning the same line until it's perfect."
 </div>
 
 <hr>
@@ -471,7 +475,7 @@ Cost: $0</code></pre>
 </p>
 
 <p style="text-align: center; color: #666;">
-    ❄️ Carve your own line ⛷️
+    ❄️ Different lines, same powder day ⛷️
 </p>
 
         </div>
