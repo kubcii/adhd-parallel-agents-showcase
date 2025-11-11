@@ -3,33 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Swarms Quick Start - Drop In & Send It</title>
-    <meta name="description" content="Quick guide to parallel AI agents - For architects who prefer powder over groomed runs">
+    <title>Swarms Quick Start - For Architects</title>
+    <meta name="description" content="Quick guide to parallel AI agents - Clean technical breakdown">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             line-height: 1.6;
             color: #2c3e50;
-            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
-        }
-        .powder-time {
-            background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
-            color: #0d47a1;
-            padding: 25px;
-            text-align: center;
-            font-size: 1.3em;
-            font-weight: bold;
-            margin-bottom: 0;
-            border-radius: 8px 8px 0 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            letter-spacing: 2px;
-        }
-        .powder-time .emoji {
-            font-size: 2em;
-            display: block;
-            margin: 10px 0;
         }
         .container {
             max-width: 900px;
@@ -40,7 +23,7 @@
             overflow: hidden;
         }
         .header {
-            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 40px;
             text-align: center;
@@ -61,15 +44,15 @@
             font-size: 1.6em;
             margin-top: 30px;
             margin-bottom: 15px;
-            color: #0d47a1;
-            border-bottom: 2px solid #00d2ff;
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
             padding-bottom: 8px;
         }
         .content h3 {
             font-size: 1.3em;
             margin-top: 20px;
             margin-bottom: 10px;
-            color: #3a7bd5;
+            color: #764ba2;
         }
         .content p, .content li { margin: 10px 0; }
         .content pre {
@@ -79,8 +62,9 @@
             border-radius: 6px;
             overflow-x: auto;
             margin: 20px 0;
-            border-left: 4px solid #00d2ff;
+            border-left: 4px solid #667eea;
             font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
         }
         .content code {
             background: #f0f0f0;
@@ -98,28 +82,27 @@
             padding-left: 30px;
         }
         .content a {
-            color: #0d47a1;
+            color: #667eea;
             text-decoration: none;
             font-weight: 500;
         }
         .content a:hover {
             text-decoration: underline;
-            color: #00d2ff;
         }
         .content hr {
             border: none;
-            border-top: 2px solid #e3f2fd;
+            border-top: 2px solid #eee;
             margin: 40px 0;
         }
         .tip-box {
-            background: #e3f2fd;
-            border-left: 4px solid #0d47a1;
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
             padding: 20px;
             margin: 20px 0;
             border-radius: 4px;
         }
         .tip-box strong {
-            color: #0d47a1;
+            color: #667eea;
         }
         .footer {
             background: #f8f9fa;
@@ -135,7 +118,7 @@
             border-bottom: 1px solid #eee;
         }
         .nav-links a {
-            color: #0d47a1;
+            color: #667eea;
             text-decoration: none;
             margin: 0 15px;
             font-weight: 500;
@@ -152,290 +135,254 @@
 </head>
 <body>
     <div class="container">
-        <div class="powder-time">
-            <span class="emoji">🎿❄️⛷️</span>
-            FRESH TRACKS • NO GROOMERS
-        </div>
         <div class="nav-links">
             <a href="index.html">← Back to Full Deep-Dive</a>
         </div>
         <div class="header">
-            <h1>Swarms Quick Start Guide</h1>
-            <p>Drop In & Send It</p>
-            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">For architects who know when to carve and when to straight-line</p>
+            <h1>Swarms Quick Start</h1>
+            <p>Parallel AI Agents for Architects</p>
+            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">Clean technical breakdown, no BS</p>
         </div>
         <div class="content">
 
-<h2>The Run Down (Literally)</h2>
+<h2>What Are Swarms?</h2>
 
-<p><strong>Swarms = Multiple AI agents working in parallel</strong></p>
+<p><strong>Multiple AI agents executing different tasks in parallel</strong></p>
 
-<p>Think of it like a powder day with your crew:</p>
-<ul>
-    <li><strong>Sequential:</strong> One person hits the trees, comes back. Then someone drops the cliff, comes back. Then someone carves the pillows. Takes all day.</li>
-    <li><strong>Parallel (Swarms):</strong> Trees guy drops in. Cliff guy sends it. Pillows guy is carving. Couloir guy is ripping. All at the same time, different types of lines.</li>
-</ul>
-
-<p>Same mountain. Same powder day. Each specialist doing their thing simultaneously. Meet at the lift, stack results. Way faster.</p>
+<p>Instead of doing Task 1, then Task 2, then Task 3 sequentially, you spawn specialized agents that work simultaneously on independent components.</p>
 
 <hr>
 
-<h2>Setup (The Gear Check)</h2>
+<h2>Setup (2 minutes)</h2>
 
-<p><strong>Install claude-flow MCP:</strong></p>
 <pre><code>npm install -g claude-flow@alpha
 claude mcp add claude-flow npx claude-flow@alpha mcp start</code></pre>
 
-<p><strong>Verify it's working:</strong></p>
-<pre><code># In Claude Code, check MCP status
+<p><strong>Verify:</strong></p>
+<pre><code># In Claude Code
 "Show MCP servers"
 # Should see claude-flow listed</code></pre>
 
 <div class="tip-box">
-    <strong>Powder Tip:</strong> You need Claude Code MAX subscription ($20/month unlimited).
-    Otherwise you're skiing the bunny slope with rental boots.
+    <strong>Requirement:</strong> Claude Code MAX subscription ($20/month unlimited).
+    Without it, you're rate-limited.
 </div>
 
 <hr>
 
-<h2>The Basic Pattern (Your Line)</h2>
+<h2>The Pattern</h2>
 
 <ol>
-    <li><strong>Drop in:</strong> Initialize swarm topology</li>
-    <li><strong>Send it:</strong> Spawn specialized agents with clear tasks</li>
-    <li><strong>Carve:</strong> Agents coordinate via shared memory</li>
-    <li><strong>Meet at the bottom:</strong> Aggregate results</li>
+    <li>Initialize swarm topology (mesh, hierarchical, etc.)</li>
+    <li>Spawn specialized agents with clear, independent tasks</li>
+    <li>Agents coordinate via shared memory (no direct communication)</li>
+    <li>Aggregate results</li>
 </ol>
 
 <hr>
 
-<h2>Real Example: Full-Stack App Build</h2>
+<h2>Example: Full-Stack App Build</h2>
 
-<p><strong>Sequential (Groomers - The Boring Way):</strong></p>
+<h3>Sequential (The Old Way)</h3>
 <pre><code>Task: "Build REST API + React frontend + tests"
 
-Hour 1: Write backend
-Hour 2: Write frontend
-Hour 3: Write tests
-Hour 4: Setup DevOps
-Hour 5: Write docs
+Hour 1: Backend (Express, auth, DB)
+Hour 2: Frontend (React, routing, state)
+Hour 3: Tests (Jest, Cypress)
+Hour 4: DevOps (Docker, CI/CD)
+Hour 5: Documentation
 
-Total: 5 hours of following the same boring line</code></pre>
+Total: 5 hours sequential execution</code></pre>
 
-<p><strong>Parallel (Powder - The Fun Way):</strong></p>
-<pre><code>"Initialize mesh swarm with 5 agents and build full-stack app:
-- Backend: Express API with auth + PostgreSQL
-- Frontend: React with routing and state mgmt
-- Testing: Jest unit tests + Cypress E2E
-- DevOps: Docker compose + GitHub Actions CI
-- Docs: API docs + README + architecture diagram"
+<h3>Parallel (Swarms)</h3>
+<pre><code>"Initialize mesh swarm with 5 agents:
 
-Swarm spawns (each specialist on their line):
-→ Backend agent: Trees (API, auth, DB schema)
-→ Frontend agent: Cliffs (Components, routing, API calls)
-→ Test agent: Pillows (Unit + integration + E2E)
-→ DevOps agent: Couloirs (Containers, CI/CD)
-→ Docs agent: Open bowl (OpenAPI, README, diagrams)
+- Agent 1: Backend (Express API + auth + PostgreSQL schema)
+- Agent 2: Frontend (React components + routing + API integration)
+- Agent 3: Testing (Jest unit tests + Cypress E2E)
+- Agent 4: DevOps (Docker compose + GitHub Actions CI)
+- Agent 5: Docs (OpenAPI spec + README + architecture diagrams)"
 
-Each specialist doing their type of line simultaneously.
-Meet at the lift in ~1.5 hours.
+All 5 agents execute simultaneously.
+Completion time: ~1.5 hours (limited by longest task)
+Speed-up: 3.3x
 
-Result: Same deliverables, 3.3x faster, way more stoke.</code></pre>
+Result: Same deliverables, 3+ hours saved</code></pre>
 
 <hr>
 
-<h2>When To Use (Conditions Report)</h2>
+<h2>When To Use</h2>
 
 <div class="tip-box">
-    <strong>Powder Day - Different Lines Available (Perfect for swarms):</strong>
+    <strong>Perfect for swarms:</strong>
     <ul style="margin-top: 10px;">
         <li>Multi-component projects (backend + frontend + infra + tests)</li>
-        <li>Independent specialized tasks (trees guy ≠ cliff guy ≠ pillows guy)</li>
-        <li>Time-critical builds ("fresh tracks before it gets tracked out")</li>
-        <li>You have MAX plan (unlimited laps)</li>
+        <li>Independent tasks with clear boundaries</li>
+        <li>Time-critical builds</li>
+        <li>You have MAX plan</li>
     </ul>
-    <em>Different types of lines = different agents, all ripping simultaneously</em>
 </div>
 
-<p><strong>Single Line Feature (Use sequential):</strong></p>
+<p><strong>Skip swarms for:</strong></p>
 <ul>
     <li>Single file changes</li>
-    <li>Deep debugging (need focus)</li>
-    <li>Highly dependent sequential tasks</li>
-    <li>Learning/experimenting (session the same feature)</li>
+    <li>Deep debugging sessions</li>
+    <li>Highly coupled sequential dependencies</li>
+    <li>Learning/exploration mode</li>
 </ul>
-<p><em>One specific line to dial in - lap it until it's dialed</em></p>
 
 <hr>
 
-<h2>The Architecture (How The Mountain Works)</h2>
+<h2>Architecture</h2>
 
-<pre><code>Queen Coordinator (Mountain Guide - knows the terrain)
+<pre><code>Queen Coordinator
     ↓
-Shared Memory Layer (The Mountain - conditions report)
+Shared Memory Layer (MCP)
     ↓
-├─ Agent 1: Backend (Trees specialist)
-├─ Agent 2: Frontend (Cliff drops specialist)
-├─ Agent 3: Database (Couloir specialist)
-├─ Agent 4: Tests (Pillows/moguls specialist)
-└─ Agent 5: DevOps (Powder bowls specialist)
+├─ Agent 1: Backend
+├─ Agent 2: Frontend
+├─ Agent 3: Database
+├─ Agent 4: Tests
+└─ Agent 5: DevOps
 
-Each agent/specialist:
-- Reads conditions (shared memory)
-- Executes their type of line (independent work)
-- Leaves tracks (writes results back)
-- No blocking (doesn't wait for others to finish their lines)
-- Meets at lift (aggregation point)</code></pre>
+Each agent:
+- Reads from shared memory (coordination data)
+- Executes independently (no blocking)
+- Writes results back (for other agents)
+- No direct agent-to-agent communication
+- Meets at aggregation point</code></pre>
 
 <hr>
 
-<h2>Cost Math (The Lift Ticket Price)</h2>
+<h2>Cost Math</h2>
 
 <p><strong>Your friend's assumption:</strong></p>
 <pre><code>5 agents × $0.015/1K tokens × 40K tokens = $3/agent
 Total: $15 per build
-Thought: "Expensive for side projects"
+
+Reasoning: "API pricing model, more agents = more cost"
 
 ❌ WRONG PRICING MODEL</code></pre>
 
 <p><strong>Reality:</strong></p>
-<pre><code>Claude Code MAX: $20/month UNLIMITED
-Token usage: Same whether sequential or parallel
-Cost for parallel: $0 extra
+<pre><code>Claude Code MAX: $20/month UNLIMITED requests
+Token usage: ~200K total (same whether parallel or sequential)
+Cost per build: $0 extra
 
-Sequential: 5 hours CPU time
-Parallel: 1.5 hours wall-clock time
-Speed: 3.3x faster
+Sequential: 5 hours work, 200K tokens
+Parallel: 1.5 hours work, 200K tokens (same!)
 Extra cost: $0
 
 ✅ FREE SPEED BOOST</code></pre>
 
 <div class="tip-box">
-    <strong>The Math:</strong> Parallel uses same tokens as sequential (maybe less due to no context switching overhead).
-    MAX plan = flat rate unlimited. You're paying for the lift ticket either way -
-    might as well have everyone hitting different lines simultaneously instead of sessioning one feature all day.
+    <strong>Key insight:</strong> Token usage is the same whether tasks run sequentially or in parallel.
+    You're using the same amount of AI processing either way. MAX plan = flat rate, so parallel = free speed.
 </div>
 
 <hr>
 
-<h2>Quick Commands (The Radio Calls)</h2>
+<h2>Real Example: Generic CLI Tool</h2>
 
-<p><strong>In Claude Code, just say:</strong></p>
+<p><strong>Task:</strong> Build developer productivity tool (like the ADHD tracker)</p>
 
-<pre><code># Simple version
-"Build a todo app with swarms: React frontend, Node backend, tests"
-
-# Architect version
-"Initialize mesh swarm, spawn 4 agents:
-1. Backend: Express + Prisma + PostgreSQL
-2. Frontend: Next.js 14 with app router
-3. Tests: Vitest + Testing Library + Playwright
-4. Infra: Docker compose + Railway deploy config"
-
-# The friend's actual use case
-"Build ADHD project tracker with parallel agents:
-- Session capture system
-- Context restoration
-- CLI commands
-- PowerShell scripts
-- Documentation
-- Tests"</code></pre>
-
-<hr>
-
-<h2>Example: Generic Version (No Personal Details)</h2>
-
-<p><strong>Build a developer tool in parallel:</strong></p>
-
-<pre><code>Task: "CLI tool for managing multiple projects"
-
-Sequential approach: ~7 hours
+<pre><code>Sequential approach: ~7 hours
 Parallel approach: ~2 hours
 
 Agents deployed:
-1. Core CLI (arg parsing, commands, config)
-2. Git integration (status, commits, branches)
-3. Context system (save/restore project state)
-4. Documentation (README, guides, examples)
-5. Tests (unit + integration + E2E)
+1. Core CLI framework (arg parsing, commands, config system)
+2. Git integration (status tracking, commit analysis, branch info)
+3. Context system (save/restore state, session management)
+4. Documentation (README, command guides, examples)
+5. Testing (unit tests, integration tests, E2E scenarios)
 
-Result:
-- 40+ files
+Results:
+- 40+ files created
 - 5,000+ lines of code
-- Full documentation
-- Test coverage
+- Complete documentation
+- Full test coverage
 - Built in 2 hours
-- Cost: $0 extra</code></pre>
+- Cost: $0 extra on MAX plan</code></pre>
 
 <hr>
 
-<h2>Common Patterns (Your Favorite Lines)</h2>
+<h2>Common Patterns</h2>
 
-<h3>Pattern 1: Full-Stack App</h3>
-<pre><code>Line types: Trees, Cliffs, Couloirs, Pillows, Bowls
-Agents: Backend, Frontend, DB, Tests, DevOps
+<h3>Pattern 1: Full-Stack MVP</h3>
+<pre><code>Agents: Backend, Frontend, DB, Tests, DevOps
 Time: 1-2 hours
-Use case: MVP, hackathon, proof-of-concept</code></pre>
+Use case: Hackathons, POCs, MVPs</code></pre>
 
 <h3>Pattern 2: CLI Tool</h3>
-<pre><code>Line types: Trees, Steeps, Rollers, Bowls, Pillows
-Agents: Core logic, Commands, Config, Docs, Tests
+<pre><code>Agents: Core, Commands, Config, Docs, Tests
 Time: 1-2 hours
-Use case: Developer tools, automation scripts</code></pre>
+Use case: Developer tools, automation</code></pre>
 
 <h3>Pattern 3: Data Pipeline</h3>
-<pre><code>Line types: Chutes, Gullies, Bowls, Faces, Trees
-Agents: Ingestion, Transform, Load, Monitoring, Tests
+<pre><code>Agents: Ingest, Transform, Load, Monitor, Test
 Time: 2-3 hours
-Use case: ETL, data processing, analytics</code></pre>
+Use case: ETL, analytics, data processing</code></pre>
 
 <h3>Pattern 4: Microservices</h3>
-<pre><code>Line types: Multiple zones across the mountain
-Agents: Service 1-N, Gateway, Infra, Tests, Docs
+<pre><code>Agents: Service 1-N, Gateway, Infra, Tests, Docs
 Time: 2-4 hours
 Use case: Distributed systems, scalable APIs</code></pre>
 
 <hr>
 
-<h2>Gotchas (Where People Yard Sale)</h2>
+<h2>Quick Commands</h2>
 
-<p><strong>1. Over-coordination</strong></p>
-<p>Don't try to coordinate too tightly. Let agents carve their own lines. Trust the shared memory layer.</p>
+<p><strong>Simple version:</strong></p>
+<pre><code>"Build a todo app with swarms: React frontend, Node backend, tests"</code></pre>
+
+<p><strong>Architect version:</strong></p>
+<pre><code>"Initialize mesh swarm, spawn 4 agents:
+1. Backend: Express + Prisma + PostgreSQL
+2. Frontend: Next.js 14 with app router + shadcn/ui
+3. Tests: Vitest + Testing Library + Playwright
+4. Infra: Docker compose + Railway deploy config"</code></pre>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p><strong>1. Over-parallelization</strong></p>
+<p>Not everything should run in parallel. Sequential dependencies exist for a reason.</p>
 
 <p><strong>2. Unclear task boundaries</strong></p>
-<p>Make sure each agent has a clear, independent scope. Overlapping responsibilities = collision.</p>
+<p>Each agent needs a well-defined, independent scope. Overlapping responsibilities = conflicts.</p>
 
-<p><strong>3. Sequential dependencies</strong></p>
-<p>If Task B requires Task A to finish, that's sequential. Don't force it into parallel.</p>
+<p><strong>3. Ignoring coordination overhead</strong></p>
+<p>Small tasks don't benefit from parallelization. Setup cost > time saved.</p>
 
-<p><strong>4. Ignoring aggregation</strong></p>
-<p>Someone needs to integrate all the pieces. Usually the Queen Coordinator or a dedicated integration agent.</p>
+<p><strong>4. Skipping aggregation</strong></p>
+<p>Someone needs to integrate all the pieces. Don't forget the final assembly step.</p>
 
 <div class="tip-box">
-    <strong>Ski Patrol Advisory:</strong> Most wipeouts happen because people try to parallel everything.
-    Know the difference between "5 different line types available" vs "sessioning the same line until it's perfect."
+    <strong>Rule of thumb:</strong> If tasks can't run independently for at least 15-30 minutes each, parallelization overhead isn't worth it.
 </div>
 
 <hr>
 
-<h2>The Proof (Tracks Don't Lie)</h2>
+<h2>The Proof</h2>
 
-<p><strong>Example build (the tracker your friend is asking about):</strong></p>
+<p><strong>Example: ADHD Tracker Build</strong></p>
 
 <pre><code>git log --stat
 # Shows 10,531 lines added across 39 files in 2 hours
 
 Files created:
-- 11 slash commands (~150 lines each)
-- 13 PowerShell scripts (~200 lines each)
-- 4 documentation guides (~500 lines each)
+- 11 slash commands (~150 lines each = 1,650 total)
+- 13 PowerShell scripts (~200 lines each = 2,600 total)
+- 4 documentation files (~500 lines each = 2,000 total)
 - 1 test suite (495 lines)
 - 1 showcase page (1,238 lines)
+- Supporting configs and templates
 
-Commit timeline:
-2:00 PM - Initial commit (swarm spawn)
-3:30 PM - All agents complete
-4:00 PM - Integration + docs finalized
+Build timeline:
+Initial commit: 2:00 PM
+All agents complete: 3:30 PM
+Integration done: 4:00 PM
 
 Wall-clock time: 2 hours
 Sequential estimate: 7+ hours
@@ -444,50 +391,42 @@ Cost: $0</code></pre>
 
 <hr>
 
-<h2>Resources (The Lodge Info)</h2>
-
-<ul>
-    <li><a href="https://github.com/ruvnet/claude-flow">claude-flow GitHub</a> - Main repo</li>
-    <li><a href="index.html">Full Technical Deep-Dive</a> - All the details</li>
-    <li><a href="https://docs.anthropic.com/claude/docs">Claude API Docs</a> - Official docs</li>
-</ul>
-
-<hr>
-
-<h2>TL;DR (The Summit Sign)</h2>
+<h2>TL;DR</h2>
 
 <div class="tip-box">
     <p><strong>Swarms in 4 bullets:</strong></p>
     <ul style="margin-top: 10px;">
-        <li>Multiple AI agents work in parallel on independent tasks</li>
+        <li>Multiple AI agents work in parallel on specialized independent tasks</li>
         <li>3-5x faster than sequential, same token cost</li>
-        <li>$0 extra on Claude MAX plan (unlimited)</li>
+        <li>$0 extra on Claude MAX plan (flat rate unlimited)</li>
         <li>Best for multi-component projects with clear boundaries</li>
     </ul>
-    <p style="margin-top: 15px;"><strong>When to use:</strong> Fresh powder conditions (independent tasks, time pressure, MAX plan)</p>
-    <p><strong>When to skip:</strong> Icy groomers (single tasks, deep debugging, learning mode)</p>
+    <p style="margin-top: 15px;"><strong>When to use:</strong> Multi-component projects, independent tasks, time pressure, MAX plan</p>
+    <p><strong>When to skip:</strong> Single features, deep debugging, tight coupling, learning mode</p>
 </div>
 
 <hr>
 
-<p style="text-align: center; font-size: 1.2em; margin: 40px 0;">
-    <strong>Now go build something fast. The powder's not gonna last forever.</strong>
-</p>
+<h2>Resources</h2>
 
-<p style="text-align: center; color: #666;">
-    ❄️ Different lines, same powder day ⛷️
+<ul>
+    <li><a href="https://github.com/ruvnet/claude-flow">claude-flow on GitHub</a></li>
+    <li><a href="index.html">Full Technical Deep-Dive</a></li>
+    <li><a href="https://docs.anthropic.com/claude/docs">Claude API Docs</a></li>
+</ul>
+
+<hr>
+
+<p style="text-align: center; font-size: 1.2em; margin: 40px 0; color: #667eea;">
+    <strong>Now go build something fast.</strong>
 </p>
 
         </div>
         <div class="footer">
-            <p><strong>Guide Type:</strong> Quick Start | <strong>Target:</strong> Architects who ski powder</p>
-            <p><strong>Reading Time:</strong> 5 minutes | <strong>Build Time:</strong> 1-4 hours depending on project</p>
+            <p><strong>Guide Type:</strong> Quick Start | <strong>Target:</strong> Architects</p>
+            <p><strong>Reading Time:</strong> 5 minutes | <strong>Build Time:</strong> 1-4 hours depending on complexity</p>
             <p style="margin-top: 15px;">
                 <a href="index.html">← Back to Full Technical Deep-Dive</a>
-            </p>
-            <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
-            <p style="margin-top: 20px; font-style: italic; color: #888;">
-                For the friend who prefers fresh lines over following tracks. 🎿
             </p>
         </div>
     </div>
