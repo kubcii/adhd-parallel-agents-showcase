@@ -2,114 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Swarms Quick Start - For Architects</title>
-    <meta name="description" content="Quick guide to parallel AI agents - Clean technical breakdown">
+    <title>Swarms Quick Start - Peak Performance Guide</title>
+    <meta name="description" content="Parallel AI agents for peak performance conditions - Technical guide for architects">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
             color: #2c3e50;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
+        }
+        .snowing-time {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 0;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: pulse 2s ease-in-out infinite;
+            letter-spacing: 3px;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        .snowing-time .time {
+            font-size: 2.2em;
+            color: #ffe600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            display: block;
+            margin: 10px 0;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
             background: white;
             border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
             overflow: hidden;
-        }
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-        .header h1 {
-            font-size: 2.2em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        .header p {
-            font-size: 1.1em;
-            opacity: 0.95;
-        }
-        .content {
-            padding: 40px;
-        }
-        .content h2 {
-            font-size: 1.6em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: #667eea;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 8px;
-        }
-        .content h3 {
-            font-size: 1.3em;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            color: #764ba2;
-        }
-        .content p, .content li { margin: 10px 0; }
-        .content pre {
-            background: #1e1e1e;
-            color: #d4d4d4;
-            padding: 20px;
-            border-radius: 6px;
-            overflow-x: auto;
-            margin: 20px 0;
-            border-left: 4px solid #667eea;
-            font-family: 'Consolas', 'Monaco', monospace;
-            font-size: 0.9em;
-        }
-        .content code {
-            background: #f0f0f0;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-family: 'Consolas', 'Monaco', monospace;
-            font-size: 0.9em;
-        }
-        .content pre code {
-            background: transparent;
-            padding: 0;
-        }
-        .content ul, .content ol {
-            margin: 15px 0;
-            padding-left: 30px;
-        }
-        .content a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .content a:hover {
-            text-decoration: underline;
-        }
-        .content hr {
-            border: none;
-            border-top: 2px solid #eee;
-            margin: 40px 0;
-        }
-        .tip-box {
-            background: #f0f4ff;
-            border-left: 4px solid #667eea;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        .tip-box strong {
-            color: #667eea;
-        }
-        .footer {
-            background: #f8f9fa;
-            padding: 30px 40px;
-            text-align: center;
-            color: #666;
-            border-top: 1px solid #eee;
         }
         .nav-links {
             text-align: center;
@@ -126,149 +62,283 @@
         .nav-links a:hover {
             text-decoration: underline;
         }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        .content {
+            padding: 40px;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        .content h1, .content h2, .content h3, .content h4 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .content h1 {
+            font-size: 2em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .content h2 {
+            font-size: 1.6em;
+            border-bottom: 2px solid #764ba2;
+            padding-bottom: 8px;
+        }
+        .content h3 {
+            font-size: 1.3em;
+            color: #667eea;
+        }
+        .content p { margin: 15px 0; }
+        .content pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+        .content code {
+            background: #f0f0f0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        .content pre code {
+            background: transparent;
+            padding: 0;
+        }
+        .content blockquote {
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #555;
+            font-style: italic;
+        }
+        .content a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .content a:hover {
+            text-decoration: underline;
+            color: #764ba2;
+        }
+        .content ul, .content ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        .content li { margin: 8px 0; }
+        .content hr {
+            border: none;
+            border-top: 2px solid #eee;
+            margin: 40px 0;
+        }
+        .metaphor {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .metaphor strong {
+            color: #667eea;
+        }
+        .warning {
+            background: #fff0f0;
+            padding: 15px;
+            border-left: 4px solid #ff4a4a;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .success {
+            background: #f0fff0;
+            padding: 15px;
+            border-left: 4px solid #4aff4a;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+        .footer strong {
+            color: #667eea;
+        }
         @media (max-width: 768px) {
             .container { margin: 10px; }
             .header, .content { padding: 20px; }
             .header h1 { font-size: 1.5em; }
+            .snowing-time { font-size: 1em; padding: 15px; }
+            .snowing-time .time { font-size: 1.5em; }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="snowing-time">
+            ❄️ PEAK CONDITIONS ❄️
+            <span class="time">Fresh Powder Performance</span>
+            Parallel Execution • Maximum Output • Optimal Focus
+        </div>
         <div class="nav-links">
             <a href="index.html">← Back to Full Deep-Dive</a>
         </div>
         <div class="header">
             <h1>Swarms Quick Start</h1>
-            <p>Parallel AI Agents for Architects</p>
-            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">For developers who know good powder when they see it</p>
+            <p>Peak Performance Guide for Architects</p>
+            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">For developers who recognize optimal conditions</p>
         </div>
         <div class="content">
 
 <h2>What Are Swarms?</h2>
 
-<p><strong>Multiple AI agents executing different tasks in parallel</strong></p>
+<p>Multiple AI agents executing different tasks in parallel</p>
 
-<p>Think of it like this: You've got fresh powder, different types of lines available. You can take them one at a time (sequential), or your whole crew can drop in simultaneously - trees guy, cliffs guy, pillows guy, couloirs guy - each hitting their specialty at the same time.</p>
+<div class="metaphor">
+<p><strong>Think of it like this:</strong> You've got fresh powder conditions. Really fresh. The kind that makes everything faster, sharper, more precise. Different types of lines available across the whole mountain.</p>
 
-<p>Same mountain. Same session. Everyone carving their own type of line. Way faster. Way more productive.</p>
+<p>You can take them one at a time (sequential approach - safe, controlled, slower). Or your whole crew can drop in simultaneously - trees guy, cliffs guy, pillows guy, couloirs guy - each hitting their specialty at the same time. <strong>Performance enhanced across all terrain types.</strong></p>
 
-<hr>
+<p>Same mountain. Same session. Everyone carving their own type of line. Way faster. Way more productive. <strong>Peak conditions = peak output.</strong></p>
+
+<p><em>When the powder's this good, you don't waste it on one line at a time.</em></p>
+</div>
 
 <h2>Setup (2 minutes)</h2>
 
 <pre><code>npm install -g claude-flow@alpha
 claude mcp add claude-flow npx claude-flow@alpha mcp start</code></pre>
 
-<p><strong>Verify:</strong></p>
+<p>Verify:</p>
 <pre><code># In Claude Code
 "Show MCP servers"
 # Should see claude-flow listed</code></pre>
 
-<div class="tip-box">
-    <strong>Requirement:</strong> Claude Code MAX subscription ($20/month unlimited).
-    Without it, you're rate-limited.
-</div>
-
-<hr>
-
 <h2>The Pattern</h2>
 
-<ol>
+<ul>
     <li>Initialize swarm topology (mesh, hierarchical, etc.)</li>
     <li>Spawn specialized agents with clear, independent tasks</li>
     <li>Agents coordinate via shared memory (no direct communication)</li>
     <li>Aggregate results</li>
-</ol>
-
-<hr>
+</ul>
 
 <h2>Example: Full-Stack App Build</h2>
 
-<h3>Sequential (One Line at a Time)</h3>
-<pre><code>Task: "Build REST API + React frontend + tests"
+<h3>Sequential (One Line at a Time - Base Conditions)</h3>
 
-Hour 1: Backend (Express, auth, DB)
-Hour 2: Frontend (React, routing, state)
-Hour 3: Tests (Jest, Cypress)
-Hour 4: DevOps (Docker, CI/CD)
-Hour 5: Documentation
+<p><strong>Task:</strong> "Build REST API + React frontend + tests"</p>
 
-Total: 5 hours - taking each line one at a time
-Focus intact but slow</code></pre>
+<ul>
+    <li><strong>Hour 1:</strong> Backend (Express, auth, DB)</li>
+    <li><strong>Hour 2:</strong> Frontend (React, routing, state)</li>
+    <li><strong>Hour 3:</strong> Tests (Jest, Cypress)</li>
+    <li><strong>Hour 4:</strong> DevOps (Docker, CI/CD)</li>
+    <li><strong>Hour 5:</strong> Documentation</li>
+</ul>
 
-<h3>Parallel (Fresh Powder - All Lines Open)</h3>
+<p><strong>Total:</strong> 5 hours - taking each line one at a time<br>
+Focus intact but slow. Good conditions wasted.</p>
+
+<h3>Parallel (Fresh Powder Day - All Lines Open)</h3>
+
+<div class="metaphor">
+<p><strong>When conditions are optimal:</strong></p>
+
 <pre><code>"Initialize mesh swarm with 5 agents:
-
 - Agent 1: Backend specialist (trees - API + auth + PostgreSQL)
-- Agent 2: Frontend specialist (cliffs - React + routing + integration)
+- Agent 2: Frontend specialist (cliffs - React + routing + integration)  
 - Agent 3: Testing specialist (pillows - Jest + Cypress + E2E)
 - Agent 4: DevOps specialist (couloirs - Docker + CI/CD)
-- Agent 5: Docs specialist (open bowl - OpenAPI + README + diagrams)"
+- Agent 5: Docs specialist (open bowl - OpenAPI + README + diagrams)"</code></pre>
 
-All 5 specialists hitting their lines simultaneously.
-Completion: ~1.5 hours (limited by longest line)
-Speed-up: 3.3x
-Performance: Enhanced across the board
+<p><strong>All 5 specialists hitting their lines simultaneously. Peak performance conditions.</strong></p>
 
-Result: Same deliverables, 3+ hours saved, higher quality output</code></pre>
+<p><strong>Completion:</strong> ~1.5 hours (limited by longest line)<br>
+<strong>Speed-up:</strong> 3.3x<br>
+<strong>Performance:</strong> Enhanced across the board<br>
+<strong>Result:</strong> Same deliverables, 3+ hours saved, higher quality output</p>
 
-<hr>
+<p><em>This is what fresh powder days are for. Maximum productivity when conditions align.</em></p>
+</div>
 
 <h2>When To Use (Conditions Report)</h2>
 
-<div class="tip-box">
-    <strong>Perfect conditions for parallel lines:</strong>
-    <ul style="margin-top: 10px;">
-        <li>Fresh powder day: Multi-component projects with different specialties</li>
-        <li>Different line types available: Backend, frontend, infra, tests (all independent)</li>
-        <li>Time-sensitive: Need to maximize output before conditions change</li>
-        <li>You're equipped: MAX plan = unlimited runs</li>
-    </ul>
-    <em>Translation: When you have good powder (complex project) and different lines to hit (independent components), send the whole crew at once.</em>
+<div class="success">
+<p><strong>✓ Fresh powder day conditions:</strong></p>
+<ul>
+    <li>Multi-component projects with different specialties (varied terrain)</li>
+    <li>Different line types available: Backend, frontend, infra, tests (all independent)</li>
+    <li>Time-sensitive: Need to maximize output before conditions change</li>
+    <li>You're properly equipped: MAX plan = unlimited runs (no lift tickets needed)</li>
+    <li><strong>Peak mental state: Focus dialed in, ready to execute</strong></li>
+</ul>
 </div>
 
-<p><strong>Skip parallel for:</strong></p>
+<div class="warning">
+<p><strong>✗ Skip parallel for flat conditions:</strong></p>
 <ul>
     <li>Single feature work (one line to session)</li>
-    <li>Deep debugging (need singular focus)</li>
-    <li>Tight coupling (sequential dependencies)</li>
-    <li>Learning mode (dial in one line first)</li>
+    <li>Deep debugging (need singular focus - technical terrain)</li>
+    <li>Tight coupling (sequential dependencies - traversing required)</li>
+    <li>Learning mode (dial in one line first before hitting everything)</li>
+    <li><strong>Off days: When focus isn't there, stick to groomers</strong></li>
 </ul>
-<p><em>Know the difference between a powder day and a park session.</em></p>
+</div>
 
-<hr>
+<p><strong>Know the difference between a powder day and a park session. Conditions matter.</strong></p>
 
 <h2>Architecture</h2>
 
-<pre><code>Queen Coordinator
+<pre><code>Queen Coordinator (Mountain Guide)
     ↓
-Shared Memory Layer (MCP)
+Shared Memory Layer (Base Lodge - Check-in Point)
     ↓
-├─ Agent 1: Backend
-├─ Agent 2: Frontend
-├─ Agent 3: Database
-├─ Agent 4: Tests
-└─ Agent 5: DevOps
+├─ Agent 1: Backend (Trees Specialist)
+├─ Agent 2: Frontend (Cliffs Specialist)  
+├─ Agent 3: Database (Pillows Specialist)
+├─ Agent 4: Tests (Couloirs Specialist)
+└─ Agent 5: DevOps (Bowls Specialist)</code></pre>
 
-Each agent:
-- Reads from shared memory (coordination data)
-- Executes independently (no blocking)
-- Writes results back (for other agents)
-- No direct agent-to-agent communication
-- Meets at aggregation point</code></pre>
-
-<hr>
+<p>Each agent:</p>
+<ul>
+    <li>Reads from shared memory (conditions report at base)</li>
+    <li>Executes independently (no blocking - full send on their line)</li>
+    <li>Writes results back (logs run data for crew)</li>
+    <li>No direct agent-to-agent communication (everyone just rips)</li>
+    <li>Meets at aggregation point (après at the lodge)</li>
+</ul>
 
 <h2>Cost Math</h2>
 
 <p><strong>Your friend's assumption:</strong></p>
 <pre><code>5 agents × $0.015/1K tokens × 40K tokens = $3/agent
 Total: $15 per build
+Reasoning: "API pricing model, more agents = more cost"</code></pre>
 
-Reasoning: "API pricing model, more agents = more cost"
-
-❌ WRONG PRICING MODEL</code></pre>
+<div class="warning">
+<p>❌ <strong>WRONG PRICING MODEL</strong></p>
+<p><em>(Like thinking you need 5 lift tickets because you're hitting 5 different runs)</em></p>
+</div>
 
 <p><strong>Reality:</strong></p>
 <pre><code>Claude Code MAX: $20/month UNLIMITED requests
@@ -277,176 +347,182 @@ Cost per build: $0 extra
 
 Sequential: 5 hours work, 200K tokens
 Parallel: 1.5 hours work, 200K tokens (same!)
-Extra cost: $0
 
-✅ FREE SPEED BOOST</code></pre>
+Extra cost: $0</code></pre>
 
-<div class="tip-box">
-    <strong>Key insight:</strong> Token usage is the same whether tasks run sequentially or in parallel.
-    Same amount of processing, same cost. MAX plan = unlimited laps.
-
-    Taking five lines one at a time vs hitting them all at once = same total effort, way different performance.
-
-    Parallel execution = free performance boost. No extra cost. Just better throughput.
+<div class="success">
+<p>✅ <strong>FREE SPEED BOOST</strong></p>
+<p><em>(Season pass = unlimited laps. More runs, same price. Use the conditions when they're good.)</em></p>
 </div>
-
-<hr>
 
 <h2>Real Example: Generic CLI Tool</h2>
 
 <p><strong>Task:</strong> Build developer productivity tool (like the ADHD tracker)</p>
 
-<pre><code>Sequential approach: ~7 hours
-Parallel approach: ~2 hours
+<ul>
+    <li><strong>Sequential approach:</strong> ~7 hours (hitting one line at a time)</li>
+    <li><strong>Parallel approach:</strong> ~2 hours (full crew dropping in)</li>
+</ul>
 
-Agents deployed:
-1. Core CLI framework (arg parsing, commands, config system)
-2. Git integration (status tracking, commit analysis, branch info)
-3. Context system (save/restore state, session management)
-4. Documentation (README, command guides, examples)
-5. Testing (unit tests, integration tests, E2E scenarios)
+<p><strong>Agents deployed:</strong></p>
+<ol>
+    <li>Core CLI framework (groomers - arg parsing, commands, config system)</li>
+    <li>Git integration (trees - status tracking, commit analysis, branch info)</li>
+    <li>Context system (bowls - save/restore state, session management)</li>
+    <li>Documentation (park - README, command guides, examples)</li>
+    <li>Testing (backcountry - unit tests, integration tests, E2E scenarios)</li>
+</ol>
 
-Results:
-- 40+ files created
-- 5,000+ lines of code
-- Complete documentation
-- Full test coverage
-- Built in 2 hours
-- Cost: $0 extra on MAX plan</code></pre>
-
-<hr>
+<div class="metaphor">
+<p><strong>Results on a good powder day:</strong></p>
+<ul>
+    <li>40+ files created</li>
+    <li>5,000+ lines of code</li>
+    <li>Complete documentation</li>
+    <li>Full test coverage</li>
+    <li><strong>Built in 2 hours (peak performance window)</strong></li>
+    <li><strong>Cost: $0 extra on MAX plan</strong></li>
+</ul>
+<p><em>This is what optimal conditions look like in practice.</em></p>
+</div>
 
 <h2>Common Line Patterns</h2>
 
 <h3>Pattern 1: Full-Stack MVP (The Full Mountain)</h3>
-<pre><code>Line types: Trees, Cliffs, Pillows, Couloirs, Bowls
-Specialists: Backend, Frontend, DB, Tests, DevOps
-Time: 1-2 hours (all lines hit simultaneously)
-Use case: Hackathons, POCs, MVPs
-Performance: High output, clean execution</code></pre>
+<p><strong>Line types:</strong> Trees, Cliffs, Pillows, Couloirs, Bowls<br>
+<strong>Specialists:</strong> Backend, Frontend, DB, Tests, DevOps<br>
+<strong>Time:</strong> 1-2 hours (all lines hit simultaneously)<br>
+<strong>Use case:</strong> Hackathons, POCs, MVPs<br>
+<strong>Performance:</strong> High output, clean execution when conditions are prime</p>
 
 <h3>Pattern 2: CLI Tool (Varied Terrain)</h3>
-<pre><code>Line types: Technical features across different zones
-Specialists: Core, Commands, Config, Docs, Tests
-Time: 1-2 hours
-Use case: Developer tools, automation
-Performance: Fast iteration, comprehensive coverage</code></pre>
+<p><strong>Line types:</strong> Technical features across different zones<br>
+<strong>Specialists:</strong> Core, Commands, Config, Docs, Tests<br>
+<strong>Time:</strong> 1-2 hours<br>
+<strong>Use case:</strong> Developer tools, automation<br>
+<strong>Performance:</strong> Fast iteration, comprehensive coverage, sustained focus</p>
 
 <h3>Pattern 3: Data Pipeline (Sequential Zones)</h3>
-<pre><code>Line types: Chutes, Gullies, Faces, Bowls
-Specialists: Ingest, Transform, Load, Monitor, Test
-Time: 2-3 hours
-Use case: ETL, analytics, data processing
-Performance: Sustained throughput</code></pre>
+<p><strong>Line types:</strong> Chutes, Gullies, Faces, Bowls<br>
+<strong>Specialists:</strong> Ingest, Transform, Load, Monitor, Test<br>
+<strong>Time:</strong> 2-3 hours<br>
+<strong>Use case:</strong> ETL, analytics, data processing<br>
+<strong>Performance:</strong> Sustained throughput, locked-in execution</p>
 
 <h3>Pattern 4: Microservices (Whole Resort)</h3>
-<pre><code>Line types: Multiple independent zones
-Specialists: Service 1-N, Gateway, Infra, Tests, Docs
-Time: 2-4 hours
-Use case: Distributed systems, scalable APIs
-Performance: Maximum parallel efficiency</code></pre>
-
-<hr>
+<p><strong>Line types:</strong> Multiple independent zones<br>
+<strong>Specialists:</strong> Service 1-N, Gateway, Infra, Tests, Docs<br>
+<strong>Time:</strong> 2-4 hours<br>
+<strong>Use case:</strong> Distributed systems, scalable APIs<br>
+<strong>Performance:</strong> Maximum parallel efficiency, full mountain utilization</p>
 
 <h2>Quick Commands</h2>
 
-<p><strong>Simple version:</strong></p>
+<p><strong>Simple version (groomer run):</strong></p>
 <pre><code>"Build a todo app with swarms: React frontend, Node backend, tests"</code></pre>
 
-<p><strong>Architect version:</strong></p>
+<p><strong>Architect version (expert lines):</strong></p>
 <pre><code>"Initialize mesh swarm, spawn 4 agents:
 1. Backend: Express + Prisma + PostgreSQL
 2. Frontend: Next.js 14 with app router + shadcn/ui
 3. Tests: Vitest + Testing Library + Playwright
 4. Infra: Docker compose + Railway deploy config"</code></pre>
 
-<hr>
-
 <h2>Common Mistakes</h2>
 
-<p><strong>1. Over-parallelization</strong></p>
-<p>Not everything should run in parallel. Sequential dependencies exist for a reason.</p>
+<h3>1. Over-parallelization</h3>
+<p>Not everything should run in parallel. Sequential dependencies exist for a reason. Don't hit advanced terrain when you should stick to groomers.</p>
 
-<p><strong>2. Unclear task boundaries</strong></p>
-<p>Each agent needs a well-defined, independent scope. Overlapping responsibilities = conflicts.</p>
+<h3>2. Unclear task boundaries</h3>
+<p>Each agent needs a well-defined, independent scope. Overlapping responsibilities = conflicts. Like two riders crossing lines - someone's eating shit.</p>
 
-<p><strong>3. Ignoring coordination overhead</strong></p>
-<p>Small tasks don't benefit from parallelization. Setup cost > time saved.</p>
+<h3>3. Ignoring coordination overhead</h3>
+<p>Small tasks don't benefit from parallelization. Setup cost > time saved. Don't deploy the full crew for a single park lap.</p>
 
-<p><strong>4. Skipping aggregation</strong></p>
-<p>Someone needs to integrate all the pieces. Don't forget the final assembly step.</p>
+<h3>4. Skipping aggregation</h3>
+<p>Someone needs to integrate all the pieces. Don't forget the final assembly step. Everyone meets back at the lodge to compare runs.</p>
 
-<div class="tip-box">
-    <strong>Rule of thumb:</strong> If tasks can't run independently for at least 15-30 minutes each, parallelization overhead isn't worth it.
-</div>
-
-<hr>
+<h3>5. Running on flat days</h3>
+<p><strong>Biggest mistake: Forcing parallel execution when mental state doesn't support it.</strong> Know your conditions. Some days you stick to one line at a time. Some days you send everything at once. <em>Respect the conditions report.</em></p>
 
 <h2>The Proof</h2>
 
 <p><strong>Example: ADHD Tracker Build</strong></p>
 
 <pre><code>git log --stat
-# Shows 10,531 lines added across 39 files in 2 hours
+# Shows 10,531 lines added across 39 files in 2 hours</code></pre>
 
-Files created:
-- 11 slash commands (~150 lines each = 1,650 total)
-- 13 PowerShell scripts (~200 lines each = 2,600 total)
-- 4 documentation files (~500 lines each = 2,000 total)
-- 1 test suite (495 lines)
-- 1 showcase page (1,238 lines)
-- Supporting configs and templates
+<p><strong>Files created:</strong></p>
+<ul>
+    <li>11 slash commands (~150 lines each = 1,650 total)</li>
+    <li>13 PowerShell scripts (~200 lines each = 2,600 total)</li>
+    <li>4 documentation files (~500 lines each = 2,000 total)</li>
+    <li>1 test suite (495 lines)</li>
+    <li>1 showcase page (1,238 lines)</li>
+    <li>Supporting configs and templates</li>
+</ul>
 
-Build timeline:
-Initial commit: 2:00 PM
-All agents complete: 3:30 PM
-Integration done: 4:00 PM
+<p><strong>Build timeline:</strong></p>
+<ul>
+    <li><strong>Initial commit:</strong> 2:00 PM (conditions check - fresh powder confirmed)</li>
+    <li><strong>All agents complete:</strong> 3:30 PM (peak performance window)</li>
+    <li><strong>Integration done:</strong> 4:00 PM (après - aggregating results)</li>
+</ul>
 
-Wall-clock time: 2 hours
-Sequential estimate: 7+ hours
-Speed-up: 3.5x
-Cost: $0</code></pre>
-
-<hr>
+<div class="success">
+<p><strong>Wall-clock time:</strong> 2 hours (optimal conditions utilized)<br>
+<strong>Sequential estimate:</strong> 7+ hours (one line at a time)<br>
+<strong>Speed-up:</strong> 3.5x<br>
+<strong>Cost:</strong> $0</p>
+<p><em>When the powder's fresh, you use it. Period.</em></p>
+</div>
 
 <h2>TL;DR</h2>
 
-<div class="tip-box">
-    <p><strong>Swarms in 4 bullets:</strong></p>
-    <ul style="margin-top: 10px;">
-        <li>Multiple AI agents work in parallel on specialized independent tasks</li>
-        <li>3-5x faster than sequential, same token cost</li>
-        <li>$0 extra on Claude MAX plan (flat rate unlimited)</li>
-        <li>Best for multi-component projects with clear boundaries</li>
-    </ul>
-    <p style="margin-top: 15px;"><strong>When to use:</strong> Multi-component projects, independent tasks, time pressure, MAX plan</p>
-    <p><strong>When to skip:</strong> Single features, deep debugging, tight coupling, learning mode</p>
-</div>
+<p><strong>Swarms in 4 bullets:</strong></p>
+<ul>
+    <li>Multiple AI agents work in parallel on specialized independent tasks</li>
+    <li>3-5x faster than sequential, same token cost</li>
+    <li>$0 extra on Claude MAX plan (flat rate unlimited - season pass model)</li>
+    <li>Best for multi-component projects with clear boundaries <strong>when conditions are optimal</strong></li>
+</ul>
 
-<hr>
+<div class="metaphor">
+<p><strong>When to use:</strong> Multi-component projects, independent tasks, time pressure, MAX plan, <em>peak mental state</em></p>
+
+<p><strong>When to skip:</strong> Single features, deep debugging, tight coupling, learning mode, <em>flat conditions</em></p>
+
+<p><strong>The conditions matter.</strong> Fresh powder days = parallel execution. Flat days = sequential focus. Icy conditions = skip the mountain entirely.</p>
+
+<p><strong>Know your terrain. Know your conditions. Optimize accordingly.</strong></p>
+</div>
 
 <h2>Resources</h2>
 
 <ul>
-    <li><a href="https://github.com/ruvnet/claude-flow">claude-flow on GitHub</a></li>
-    <li><a href="index.html">Full Technical Deep-Dive</a></li>
-    <li><a href="https://docs.anthropic.com/claude/docs">Claude API Docs</a></li>
+    <li><a href="https://github.com/kubcii/adhd-parallel-agents-showcase">GitHub Repo</a> (your gear closet)</li>
+    <li><a href="https://docs.claude.com">Claude Docs</a> (trail maps)</li>
+    <li><a href="https://github.com/kubcii/claude-flow">claude-flow</a> (lift system)</li>
 </ul>
 
-<hr>
+<hr style="border: 1px solid #333; margin: 40px 0;">
 
-<p style="text-align: center; font-size: 1.2em; margin: 40px 0; color: #667eea;">
-    <strong>Now go hit some lines. The powder's fresh.</strong>
-</p>
+<div class="metaphor">
+<p><strong>Now go hit some lines. The powder's fresh.</strong></p>
 
-<p style="text-align: center; color: #999; font-size: 0.9em; margin-top: 10px;">
-    (Different types of lines. All at once. High performance. You know what we mean.)
-</p>
+<p><em>Different types of lines. All at once. Peak performance conditions. Enhanced output across all terrain types.</em></p>
+
+<p><strong>You know what we mean.</strong></p>
+
+<p><em>When conditions are this good, you don't waste them. Maximum productivity. Optimal focus. Clean execution.</em></p>
+
+<p><strong>Fresh powder days don't come often. Use them when they do.</strong></p>
+</div>
 
         </div>
         <div class="footer">
             <p><strong>Guide Type:</strong> Quick Start | <strong>Target:</strong> Architects</p>
-            <p><strong>Reading Time:</strong> 5 minutes | <strong>Build Time:</strong> 1-4 hours depending on complexity</p>
+            <p><strong>Reading Time:</strong> 5 minutes | <strong>Build Time:</strong> 1-4 hours depending on conditions</p>
             <p style="margin-top: 15px;">
                 <a href="index.html">← Back to Full Technical Deep-Dive</a>
             </p>
