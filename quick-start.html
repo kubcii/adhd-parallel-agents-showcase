@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Swarms Quick Start - Drop In & Send It</title>
+    <meta name="description" content="Quick guide to parallel AI agents - For architects who prefer powder over groomed runs">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            padding: 20px;
+        }
+        .powder-time {
+            background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
+            color: #0d47a1;
+            padding: 25px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 0;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            letter-spacing: 2px;
+        }
+        .powder-time .emoji {
+            font-size: 2em;
+            display: block;
+            margin: 10px 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        .content {
+            padding: 40px;
+        }
+        .content h2 {
+            font-size: 1.6em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #0d47a1;
+            border-bottom: 2px solid #00d2ff;
+            padding-bottom: 8px;
+        }
+        .content h3 {
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #3a7bd5;
+        }
+        .content p, .content li { margin: 10px 0; }
+        .content pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border-left: 4px solid #00d2ff;
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+        .content code {
+            background: #f0f0f0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+        }
+        .content pre code {
+            background: transparent;
+            padding: 0;
+        }
+        .content ul, .content ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        .content a {
+            color: #0d47a1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .content a:hover {
+            text-decoration: underline;
+            color: #00d2ff;
+        }
+        .content hr {
+            border: none;
+            border-top: 2px solid #e3f2fd;
+            margin: 40px 0;
+        }
+        .tip-box {
+            background: #e3f2fd;
+            border-left: 4px solid #0d47a1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .tip-box strong {
+            color: #0d47a1;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+        .nav-links {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }
+        .nav-links a {
+            color: #0d47a1;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .container { margin: 10px; }
+            .header, .content { padding: 20px; }
+            .header h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="powder-time">
+            <span class="emoji">🎿❄️⛷️</span>
+            FRESH TRACKS • NO GROOMERS
+        </div>
+        <div class="nav-links">
+            <a href="index.html">← Back to Full Deep-Dive</a>
+        </div>
+        <div class="header">
+            <h1>Swarms Quick Start Guide</h1>
+            <p>Drop In & Send It</p>
+            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">For architects who know when to carve and when to straight-line</p>
+        </div>
+        <div class="content">
+
+<h2>The Run Down (Literally)</h2>
+
+<p><strong>Swarms = Multiple AI agents working in parallel</strong></p>
+
+<p>Think of it like skiing with your crew:</p>
+<ul>
+    <li><strong>Groomed run approach:</strong> Everyone follows single file down the same track (sequential)</li>
+    <li><strong>Powder approach:</strong> Everyone drops in simultaneously, carves their own line, meets at the bottom (parallel swarms)</li>
+</ul>
+
+<p>Same mountain. Same destination. Way more fun. Way faster.</p>
+
+<hr>
+
+<h2>Setup (The Gear Check)</h2>
+
+<p><strong>Install claude-flow MCP:</strong></p>
+<pre><code>npm install -g claude-flow@alpha
+claude mcp add claude-flow npx claude-flow@alpha mcp start</code></pre>
+
+<p><strong>Verify it's working:</strong></p>
+<pre><code># In Claude Code, check MCP status
+"Show MCP servers"
+# Should see claude-flow listed</code></pre>
+
+<div class="tip-box">
+    <strong>Powder Tip:</strong> You need Claude Code MAX subscription ($20/month unlimited).
+    Otherwise you're skiing the bunny slope with rental boots.
+</div>
+
+<hr>
+
+<h2>The Basic Pattern (Your Line)</h2>
+
+<ol>
+    <li><strong>Drop in:</strong> Initialize swarm topology</li>
+    <li><strong>Send it:</strong> Spawn specialized agents with clear tasks</li>
+    <li><strong>Carve:</strong> Agents coordinate via shared memory</li>
+    <li><strong>Meet at the bottom:</strong> Aggregate results</li>
+</ol>
+
+<hr>
+
+<h2>Real Example: Full-Stack App Build</h2>
+
+<p><strong>Sequential (Groomers - The Boring Way):</strong></p>
+<pre><code>Task: "Build REST API + React frontend + tests"
+
+Hour 1: Write backend
+Hour 2: Write frontend
+Hour 3: Write tests
+Hour 4: Setup DevOps
+Hour 5: Write docs
+
+Total: 5 hours of following the same boring line</code></pre>
+
+<p><strong>Parallel (Powder - The Fun Way):</strong></p>
+<pre><code>"Initialize mesh swarm with 5 agents and build full-stack app:
+- Backend: Express API with auth + PostgreSQL
+- Frontend: React with routing and state mgmt
+- Testing: Jest unit tests + Cypress E2E
+- DevOps: Docker compose + GitHub Actions CI
+- Docs: API docs + README + architecture diagram"
+
+Swarm spawns:
+→ Backend agent: API, auth, DB schema
+→ Frontend agent: Components, routing, API integration
+→ Test agent: Unit + integration + E2E
+→ DevOps agent: Containers, CI/CD pipeline
+→ Docs agent: OpenAPI spec, README, diagrams
+
+All carving their own lines simultaneously.
+Meet at the bottom in ~1.5 hours.
+
+Result: Same deliverables, 3.3x faster, way more stoke.</code></pre>
+
+<hr>
+
+<h2>When To Use (Conditions Report)</h2>
+
+<div class="tip-box">
+    <strong>Fresh Powder (Perfect for swarms):</strong>
+    <ul style="margin-top: 10px;">
+        <li>Multi-component projects (backend + frontend + infra)</li>
+        <li>Independent tasks that can run parallel</li>
+        <li>Time-critical builds ("need this by EOD")</li>
+        <li>You have MAX plan (unlimited runs)</li>
+    </ul>
+</div>
+
+<p><strong>Icy Groomers (Use sequential):</strong></p>
+<ul>
+    <li>Single file changes</li>
+    <li>Deep debugging (need focus)</li>
+    <li>Highly dependent sequential tasks</li>
+    <li>Learning/experimenting (take it slow)</li>
+</ul>
+
+<hr>
+
+<h2>The Architecture (How The Mountain Works)</h2>
+
+<pre><code>Queen Coordinator (Ski Patrol)
+    ↓
+Shared Memory Layer (The Mountain)
+    ↓
+├─ Agent 1: Backend (Left couloir)
+├─ Agent 2: Frontend (Center bowl)
+├─ Agent 3: Database (Right chute)
+├─ Agent 4: Tests (Trees run)
+└─ Agent 5: DevOps (Cliff drops)
+
+Each agent:
+- Reads from shared memory (checks conditions)
+- Executes independently (carves own line)
+- Writes back results (leaves tracks)
+- No blocking (doesn't wait for others)
+- Meets at lift (aggregation point)</code></pre>
+
+<hr>
+
+<h2>Cost Math (The Lift Ticket Price)</h2>
+
+<p><strong>Your friend's assumption:</strong></p>
+<pre><code>5 agents × $0.015/1K tokens × 40K tokens = $3/agent
+Total: $15 per build
+Thought: "Expensive for side projects"
+
+❌ WRONG PRICING MODEL</code></pre>
+
+<p><strong>Reality:</strong></p>
+<pre><code>Claude Code MAX: $20/month UNLIMITED
+Token usage: Same whether sequential or parallel
+Cost for parallel: $0 extra
+
+Sequential: 5 hours CPU time
+Parallel: 1.5 hours wall-clock time
+Speed: 3.3x faster
+Extra cost: $0
+
+✅ FREE SPEED BOOST</code></pre>
+
+<div class="tip-box">
+    <strong>Powder Math:</strong> Parallel uses same tokens as sequential (maybe less due to no context switching overhead).
+    MAX plan = flat rate unlimited. You're paying for the lift ticket either way -
+    might as well ski the fresh lines instead of groomer laps.
+</div>
+
+<hr>
+
+<h2>Quick Commands (The Radio Calls)</h2>
+
+<p><strong>In Claude Code, just say:</strong></p>
+
+<pre><code># Simple version
+"Build a todo app with swarms: React frontend, Node backend, tests"
+
+# Architect version
+"Initialize mesh swarm, spawn 4 agents:
+1. Backend: Express + Prisma + PostgreSQL
+2. Frontend: Next.js 14 with app router
+3. Tests: Vitest + Testing Library + Playwright
+4. Infra: Docker compose + Railway deploy config"
+
+# The friend's actual use case
+"Build ADHD project tracker with parallel agents:
+- Session capture system
+- Context restoration
+- CLI commands
+- PowerShell scripts
+- Documentation
+- Tests"</code></pre>
+
+<hr>
+
+<h2>Example: Generic Version (No Personal Details)</h2>
+
+<p><strong>Build a developer tool in parallel:</strong></p>
+
+<pre><code>Task: "CLI tool for managing multiple projects"
+
+Sequential approach: ~7 hours
+Parallel approach: ~2 hours
+
+Agents deployed:
+1. Core CLI (arg parsing, commands, config)
+2. Git integration (status, commits, branches)
+3. Context system (save/restore project state)
+4. Documentation (README, guides, examples)
+5. Tests (unit + integration + E2E)
+
+Result:
+- 40+ files
+- 5,000+ lines of code
+- Full documentation
+- Test coverage
+- Built in 2 hours
+- Cost: $0 extra</code></pre>
+
+<hr>
+
+<h2>Common Patterns (Your Favorite Lines)</h2>
+
+<h3>Pattern 1: Full-Stack App</h3>
+<pre><code>Agents: Backend, Frontend, DB, Tests, DevOps
+Time: 1-2 hours
+Use case: MVP, hackathon, proof-of-concept</code></pre>
+
+<h3>Pattern 2: CLI Tool</h3>
+<pre><code>Agents: Core logic, Commands, Config, Docs, Tests
+Time: 1-2 hours
+Use case: Developer tools, automation scripts</code></pre>
+
+<h3>Pattern 3: Data Pipeline</h3>
+<pre><code>Agents: Ingestion, Transform, Load, Monitoring, Tests
+Time: 2-3 hours
+Use case: ETL, data processing, analytics</code></pre>
+
+<h3>Pattern 4: Microservices</h3>
+<pre><code>Agents: Service 1-N, Gateway, Infra, Tests, Docs
+Time: 2-4 hours
+Use case: Distributed systems, scalable APIs</code></pre>
+
+<hr>
+
+<h2>Gotchas (Where People Yard Sale)</h2>
+
+<p><strong>1. Over-coordination</strong></p>
+<p>Don't try to coordinate too tightly. Let agents carve their own lines. Trust the shared memory layer.</p>
+
+<p><strong>2. Unclear task boundaries</strong></p>
+<p>Make sure each agent has a clear, independent scope. Overlapping responsibilities = collision.</p>
+
+<p><strong>3. Sequential dependencies</strong></p>
+<p>If Task B requires Task A to finish, that's sequential. Don't force it into parallel.</p>
+
+<p><strong>4. Ignoring aggregation</strong></p>
+<p>Someone needs to integrate all the pieces. Usually the Queen Coordinator or a dedicated integration agent.</p>
+
+<div class="tip-box">
+    <strong>Ski Patrol Advisory:</strong> Most wipeouts happen because people try to parallel everything.
+    Some runs are meant to be taken one at a time. Know the difference.
+</div>
+
+<hr>
+
+<h2>The Proof (Tracks Don't Lie)</h2>
+
+<p><strong>Example build (the tracker your friend is asking about):</strong></p>
+
+<pre><code>git log --stat
+# Shows 10,531 lines added across 39 files in 2 hours
+
+Files created:
+- 11 slash commands (~150 lines each)
+- 13 PowerShell scripts (~200 lines each)
+- 4 documentation guides (~500 lines each)
+- 1 test suite (495 lines)
+- 1 showcase page (1,238 lines)
+
+Commit timeline:
+2:00 PM - Initial commit (swarm spawn)
+3:30 PM - All agents complete
+4:00 PM - Integration + docs finalized
+
+Wall-clock time: 2 hours
+Sequential estimate: 7+ hours
+Speed-up: 3.5x
+Cost: $0</code></pre>
+
+<hr>
+
+<h2>Resources (The Lodge Info)</h2>
+
+<ul>
+    <li><a href="https://github.com/ruvnet/claude-flow">claude-flow GitHub</a> - Main repo</li>
+    <li><a href="index.html">Full Technical Deep-Dive</a> - All the details</li>
+    <li><a href="https://docs.anthropic.com/claude/docs">Claude API Docs</a> - Official docs</li>
+</ul>
+
+<hr>
+
+<h2>TL;DR (The Summit Sign)</h2>
+
+<div class="tip-box">
+    <p><strong>Swarms in 4 bullets:</strong></p>
+    <ul style="margin-top: 10px;">
+        <li>Multiple AI agents work in parallel on independent tasks</li>
+        <li>3-5x faster than sequential, same token cost</li>
+        <li>$0 extra on Claude MAX plan (unlimited)</li>
+        <li>Best for multi-component projects with clear boundaries</li>
+    </ul>
+    <p style="margin-top: 15px;"><strong>When to use:</strong> Fresh powder conditions (independent tasks, time pressure, MAX plan)</p>
+    <p><strong>When to skip:</strong> Icy groomers (single tasks, deep debugging, learning mode)</p>
+</div>
+
+<hr>
+
+<p style="text-align: center; font-size: 1.2em; margin: 40px 0;">
+    <strong>Now go build something fast. The powder's not gonna last forever.</strong>
+</p>
+
+<p style="text-align: center; color: #666;">
+    ❄️ Fresh tracks > Groomed runs ⛷️
+</p>
+
+        </div>
+        <div class="footer">
+            <p><strong>Guide Type:</strong> Quick Start | <strong>Target:</strong> Architects who ski powder</p>
+            <p><strong>Reading Time:</strong> 5 minutes | <strong>Build Time:</strong> 1-4 hours depending on project</p>
+            <p style="margin-top: 15px;">
+                <a href="index.html">← Back to Full Technical Deep-Dive</a>
+            </p>
+            <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+            <p style="margin-top: 20px; font-style: italic; color: #888;">
+                For the friend who prefers fresh lines over following tracks. 🎿
+            </p>
+        </div>
+    </div>
+</body>
+</html>
